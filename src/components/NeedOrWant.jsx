@@ -124,14 +124,10 @@ export default function NeedOrWant({ onBack }) {
     return () => clearInterval(timerRef.current);
   }, [idx, done]);
 
-  // Auto-advance only on correct or timeout — wrong answers wait for a tap
+  // Stop the timer when an answer is picked; player taps Next to continue
   useEffect(() => {
     if (picked === null) return;
     clearInterval(timerRef.current);
-    const wasWrong = picked !== "timeout" && picked !== items[idx]?.answer;
-    if (wasWrong) return;
-    const t = setTimeout(advance, 1800);
-    return () => clearTimeout(t);
   }, [picked]);
 
   function advance() {
@@ -171,7 +167,20 @@ export default function NeedOrWant({ onBack }) {
     <div className="page">
       {/* Header row */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
-        <BackBtn onClick={onBack} />
+        <button
+          onClick={onBack}
+          style={{
+            background: "#fee2e2",
+            color: "var(--red)",
+            border: "none",
+            borderRadius: "var(--radius-sm)",
+            padding: "6px 14px",
+            fontWeight: 700,
+            fontSize: 13,
+          }}
+        >
+          ✕ Quit
+        </button>
         <Pill color="#f3e8ff" textColor="#9333ea">
           {liveMascot} {score} correct
         </Pill>
@@ -244,25 +253,23 @@ export default function NeedOrWant({ onBack }) {
             <div style={{ fontWeight: 700, fontSize: 14, color: timedOut ? "var(--amber)" : isCorrect ? "var(--green)" : "var(--red)", marginBottom: 6 }}>
               {timedOut ? "⏰ Too slow!" : isCorrect ? "✅ Correct!" : `❌ It's a ${item.answer}!`}
             </div>
-            <p style={{ fontSize: 13, color: "var(--text)", lineHeight: 1.55, fontWeight: 500, marginBottom: !isCorrect ? 12 : 0 }}>
+            <p style={{ fontSize: 13, color: "var(--text)", lineHeight: 1.55, fontWeight: 500, marginBottom: 12 }}>
               {item.explanation}
             </p>
-            {!isCorrect && (
-              <button
-                onClick={advance}
-                style={{
-                  width: "100%",
-                  background: "var(--red)",
-                  color: "white",
-                  borderRadius: "var(--radius-sm)",
-                  padding: "10px 0",
-                  fontWeight: 700,
-                  fontSize: 14,
-                }}
-              >
-                {idx + 1 >= items.length ? "See results →" : "Next →"}
-              </button>
-            )}
+            <button
+              onClick={advance}
+              style={{
+                width: "100%",
+                background: isCorrect ? "var(--green)" : timedOut ? "var(--amber)" : "var(--red)",
+                color: "white",
+                borderRadius: "var(--radius-sm)",
+                padding: "10px 0",
+                fontWeight: 700,
+                fontSize: 14,
+              }}
+            >
+              {idx + 1 >= items.length ? "See results →" : "Next →"}
+            </button>
           </div>
         )}
       </div>

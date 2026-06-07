@@ -118,8 +118,8 @@ export default function Home({ onNav }) {
 function PiggyLogo() {
   return (
     <svg
-      width="130"
-      height="150"
+      width="100"
+      height="115"
       viewBox="0 0 130 150"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
