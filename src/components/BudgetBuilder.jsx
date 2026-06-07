@@ -6,14 +6,14 @@ import ScenarioPicker from "./ScenarioPicker.jsx";
 import SurpriseRound from "./SurpriseRound.jsx";
 
 // ─── STATE MACHINE ────────────────────────────────────────────────────────────
-// The builder has four distinct phases. Using useReducer with explicit actions
+// The builder has five distinct phases. Using useReducer with explicit actions
 // makes every transition visible and testable, rather than hiding them in
 // scattered setState calls.
 //
-//   idle → build → results → surprise → idle
+//   idle → intro → build → results → surprise → idle
 
 const INITIAL_STATE = {
-  phase: "idle",      // "idle" | "build" | "results" | "surprise"
+  phase: "idle",      // "idle" | "intro" | "build" | "results" | "surprise"
   scenario: null,
   allocs: {},         // { [category.id]: number }
   page: 0,
@@ -24,10 +24,12 @@ function reducer(state, action) {
     case "START_SCENARIO":
       return {
         ...INITIAL_STATE,
-        phase: "build",
+        phase: "intro",
         scenario: action.scenario,
         allocs: Object.fromEntries(action.scenario.categories.map((c) => [c.id, 0])),
       };
+    case "START_BUILD":
+      return { ...state, phase: "build" };
     case "SET_ALLOC":
       return {
         ...state,
@@ -143,6 +145,48 @@ export default function BudgetBuilder({ onBack }) {
         onBack={onBack}
         onSelect={(s) => dispatch({ type: "START_SCENARIO", scenario: s })}
       />
+    );
+  }
+
+  // ── Intro screen ───────────────────────────────────────────────────────────
+  if (phase === "intro") {
+    return (
+      <div className="page">
+        <BackBtn onClick={() => dispatch({ type: "RESET" })} label="← Change" />
+
+        <div style={{ marginTop: 20, marginBottom: 20 }}>
+          <div style={{ fontSize: 28, marginBottom: 10 }}>📊</div>
+          <h2 style={{ fontSize: 22, fontWeight: 800, color: "var(--text)", marginBottom: 6 }}>
+            How to play
+          </h2>
+          <p style={{ fontSize: 14, color: "var(--muted)", fontWeight: 500 }}>
+            {scenario.title}
+          </p>
+        </div>
+
+        <div className="card" style={{ padding: "22px 20px", marginBottom: 20 }}>
+          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 16 }}>
+            {[
+              { icon: "💰", text: `${scenario.title} has ${fmt(scenario.income)} to spend every month. You decide how much goes to each category.` },
+              { icon: "🎯", text: "Get the exact amount right and you score 3 points. Within £50 earns 1 point. Further away scores 0." },
+              { icon: "⚡", text: "After you've built the budget, an unexpected bill arrives in the Surprise Round — can you cover it?" },
+              { icon: "🏆", text: "Try to score as many points as possible. You might be surprised how much things really cost!" },
+            ].map(({ icon, text }) => (
+              <li key={icon} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                <span style={{ fontSize: 22, flexShrink: 0, lineHeight: 1.4 }}>{icon}</span>
+                <p style={{ fontSize: 14, color: "var(--text)", fontWeight: 500, lineHeight: 1.55, margin: 0 }}>{text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <button
+          className="btn-primary"
+          onClick={() => dispatch({ type: "START_BUILD" })}
+        >
+          Let's go →
+        </button>
+      </div>
     );
   }
 
