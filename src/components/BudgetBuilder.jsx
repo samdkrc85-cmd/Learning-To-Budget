@@ -50,6 +50,58 @@ function reducer(state, action) {
   }
 }
 
+// ─── CATEGORY COLOURS ────────────────────────────────────────────────────────
+// Stable colour map keyed by category id. Used as a left border on result rows.
+const CATEGORY_COLOURS = {
+  // Child scenario
+  food:           "#f97316",
+  uniform:        "#8b5cf6",
+  school_dinners: "#06b6d4",
+  clubs:          "#10b981",
+  trips:          "#f59e0b",
+  gifts:          "#ec4899",
+  books:          "#6366f1",
+  toiletries:     "#14b8a6",
+  pocket_money:   "#eab308",
+  entertainment:  "#a855f7",
+  dentist:        "#ef4444",
+  housing_share:  "#64748b",
+  // Family scenario
+  mortgage:       "#64748b",
+  energy:         "#f59e0b",
+  council_tax:    "#6366f1",
+  car:            "#0ea5e9",
+  dog:            "#a16207",
+  internet:       "#06b6d4",
+  phones:         "#8b5cf6",
+  eating_out:     "#f97316",
+  savings:        "#10b981",
+  holiday:        "#22d3ee",
+  // Student / couple shared
+  rent:           "#64748b",
+  transport:      "#0ea5e9",
+  social:         "#a855f7",
+  clothes:        "#ec4899",
+  subs:           "#6366f1",
+  laundry:        "#14b8a6",
+  gym:            "#10b981",
+  car_ins:        "#0ea5e9",
+  hobbies:        "#f97316",
+  holidays:       "#22d3ee",
+  // Uni student
+  halls:          "#64748b",
+  printing:       "#6366f1",
+  sports:         "#10b981",
+  // Single parent
+  childcare:      "#ec4899",
+  council_tax_sp: "#6366f1",
+  household:      "#14b8a6",
+};
+
+function getCategoryColour(id) {
+  return CATEGORY_COLOURS[id] || "#94a3b8";
+}
+
 // ─── PAGE SIZE ────────────────────────────────────────────────────────────────
 const PAGE_SIZE = 4;
 
@@ -138,6 +190,7 @@ export default function BudgetBuilder({ onBack }) {
                 gap: 12,
                 padding: "13px 18px",
                 borderBottom: i < results.length - 1 ? "1px solid var(--border)" : "none",
+                borderLeft: `4px solid ${getCategoryColour(r.id)}`,
               }}
             >
               <span style={{ fontSize: 20, flexShrink: 0 }}>{r.emoji}</span>
