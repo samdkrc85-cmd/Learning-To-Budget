@@ -110,6 +110,19 @@ export default function Home({ onNav }) {
           tagColor="#0f766e"
         />
 
+        <HomeCard
+          onPress={() => onNav("needorwant")}
+          gradient="linear-gradient(120deg, #9333ea, #db2777)"
+          shadow="rgba(147,51,234,0.12)"
+          shadowHover="rgba(147,51,234,0.2)"
+          icon="🤔"
+          title="Need or Want?"
+          subtitle="10 cards · sort everyday items before the timer runs out"
+          tags={["✅ Needs", "❌ Wants", "🤔 Tricky ones"]}
+          tagBg="#f3e8ff"
+          tagColor="#7e22ce"
+        />
+
       </div>
     </div>
   );

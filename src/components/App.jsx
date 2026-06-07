@@ -5,6 +5,7 @@ import ErrorBoundary from "./ErrorBoundary.jsx";
 import Home from "./Home.jsx";
 import PriceQuiz from "./PriceQuiz.jsx";
 import BudgetBuilder from "./BudgetBuilder.jsx";
+import NeedOrWant from "./NeedOrWant.jsx";
 
 /**
  * App
@@ -18,9 +19,10 @@ export default function App() {
 
   return (
     <ErrorBoundary>
-      {screen === "home"   && <Home onNav={setScreen} />}
-      {screen === "quiz"   && <PriceQuiz onBack={() => setScreen("home")} />}
-      {screen === "budget" && <BudgetBuilder onBack={() => setScreen("home")} />}
+      {screen === "home"       && <Home onNav={setScreen} />}
+      {screen === "quiz"       && <PriceQuiz onBack={() => setScreen("home")} />}
+      {screen === "budget"     && <BudgetBuilder onBack={() => setScreen("home")} />}
+      {screen === "needorwant" && <NeedOrWant onBack={() => setScreen("home")} />}
     </ErrorBoundary>
   );
 }
