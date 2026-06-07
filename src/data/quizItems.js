@@ -18,7 +18,7 @@ export const ALL_QUIZ_ITEMS = [
   {
     id: "eggs",
     question: "How much do 6 free-range eggs cost?",
-    emoji: "🥚", amount: 2, options: [0.20, 2, 6, 15], category: "Supermarket",
+    emoji: "🥚", amount: 2.30, options: [0.20, 2.30, 6, 15], category: "Supermarket",
     context: "Eggs are one of the cheapest sources of protein. A family eating two eggs each for breakfast would use a box in just one morning!",
   },
   {
@@ -48,8 +48,8 @@ export const ALL_QUIZ_ITEMS = [
   {
     id: "bread",
     question: "How much does a loaf of bread cost?",
-    emoji: "🍞", amount: 1, options: [0.10, 1, 4, 10], category: "Supermarket",
-    context: "A family might get through two or three loaves a week — that's around £150 a year just on bread. Prices went up sharply in 2022 and 2023.",
+    emoji: "🍞", amount: 1.35, options: [0.10, 1.35, 4, 10], category: "Supermarket",
+    context: "A family might get through two or three loaves a week — that's around £200 a year just on bread. Prices went up sharply in 2022 and 2023 and have stayed high.",
   },
   {
     id: "petrol",
@@ -66,8 +66,8 @@ export const ALL_QUIZ_ITEMS = [
   {
     id: "haircut",
     question: "How much does an adult's haircut cost?",
-    emoji: "✂️", amount: 18, options: [1, 7, 18, 60], category: "Personal",
-    context: "Getting a haircut every six weeks costs about £150 a year. Children's haircuts are usually cheaper. Some families save money by cutting hair at home!",
+    emoji: "✂️", amount: 20, options: [1, 8, 20, 60], category: "Personal",
+    context: "Getting a haircut every six weeks costs about £175 a year. Children's haircuts are usually cheaper. Some families save money by cutting hair at home!",
   },
   {
     id: "gym",
@@ -84,8 +84,8 @@ export const ALL_QUIZ_ITEMS = [
   {
     id: "netflix",
     question: "How much does a year of Netflix cost?",
-    emoji: "📺", amount: 144, options: [10, 40, 144, 500], category: "Subscriptions",
-    context: "Many families have several subscriptions — Netflix, Disney+, Spotify, Apple TV — which can easily add up to over £500 a year without people noticing.",
+    emoji: "📺", amount: 132, options: [10, 40, 132, 500], category: "Subscriptions",
+    context: "At around £11 a month, many families have several subscriptions — Netflix, Disney+, Spotify, Apple TV — which can easily add up to over £500 a year without people noticing.",
   },
   {
     id: "car_insurance",
@@ -175,13 +175,13 @@ export const ALL_QUIZ_ITEMS = [
     id: "shampoo",
     question: "How much does a bottle of shampoo cost?",
     emoji: "🧴", amount: 4, options: [0.50, 2, 4, 15], category: "Personal",
-    context: "A bottle lasts about a month — so that's £48 a year, just on shampoo. Toiletries like shower gel, toothpaste, and deodorant add up to over £200 a year for most adults.",
+    context: "A bottle lasts about 6–8 weeks — so that's around £30 a year, just on shampoo. Toiletries like shower gel, toothpaste, and deodorant add up to over £200 a year for most adults.",
   },
   {
     id: "spotify",
     question: "How much does a Spotify subscription cost per month?",
-    emoji: "🎵", amount: 11, options: [1, 5, 11, 25], category: "Subscriptions",
-    context: "That's £132 a year. Many families also pay for Netflix, Disney+, and Apple TV — it's easy to rack up over £500 a year on subscriptions without realising.",
+    emoji: "🎵", amount: 11.99, options: [1, 5, 11.99, 25], category: "Subscriptions",
+    context: "That's over £140 a year. Many families also pay for Netflix, Disney+, and Apple TV — it's easy to rack up over £500 a year on subscriptions without realising.",
   },
   {
     id: "backpack",
@@ -199,7 +199,7 @@ export const ALL_QUIZ_ITEMS = [
     id: "toilet_rolls",
     question: "How much does a pack of 24 toilet rolls cost?",
     emoji: "🧻", amount: 9, options: [1, 4, 9, 25], category: "Supermarket",
-    context: "A family of four gets through about 100 rolls a month. That works out at roughly £45 a year just on toilet paper — one of those costs you never really think about!",
+    context: "A family of four gets through about 50–60 rolls a month. That works out at roughly £25–£30 a year just on toilet paper — one of those costs you never really think about!",
   },
   {
     id: "bicycle",
@@ -210,8 +210,8 @@ export const ALL_QUIZ_ITEMS = [
   {
     id: "bus_pass",
     question: "How much does a weekly bus pass cost in a city?",
-    emoji: "🚌", amount: 20, options: [2, 8, 20, 60], category: "Getting about",
-    context: "That's £80 a month, or nearly £1,000 a year, just to get around by bus. Many people have to pay this on top of all their other bills.",
+    emoji: "🚌", amount: 25, options: [2, 10, 25, 60], category: "Getting about",
+    context: "That's around £100 a month, or over £1,200 a year, just to get around by bus. Prices vary a lot by city — London is much more expensive than smaller towns.",
   },
   {
     id: "tea_bags",
@@ -234,8 +234,8 @@ export const ALL_QUIZ_ITEMS = [
   {
     id: "ice_cream",
     question: "How much does an ice cream from an ice cream van cost?",
-    emoji: "🍦", amount: 2.50, options: [0.20, 1, 2.50, 8], category: "Eating out",
-    context: "A 99 Flake from a van costs about £2.50 — the same as a whole tub of vanilla ice cream from the supermarket with enough for six servings!",
+    emoji: "🍦", amount: 3, options: [0.20, 1.50, 3, 8], category: "Eating out",
+    context: "A 99 Flake from a van costs about £3 — the same as a whole tub of vanilla ice cream from the supermarket with enough for six servings!",
   },
   {
     id: "comic",
@@ -348,7 +348,7 @@ export const ALL_QUIZ_ITEMS = [
   {
     id: "pencil_case",
     question: "How much does a pencil case with pens and pencils cost?",
-    emoji: "✏️", amount: 8, options: [0.50, 3, 8, 25], category: "Clothes",
+    emoji: "✏️", amount: 8, options: [0.50, 3, 8, 25], category: "School",
     context: "The average child loses or breaks several pens and pencils a year. Stocking up on stationery at the start of the school year usually works out cheaper than buying bits throughout.",
   },
   {
@@ -360,8 +360,8 @@ export const ALL_QUIZ_ITEMS = [
   {
     id: "hot_chocolate",
     question: "How much does a hot chocolate cost at a café?",
-    emoji: "🍫", amount: 3.50, options: [0.30, 1.50, 3.50, 9], category: "Eating out",
-    context: "A sachet of hot chocolate powder at home costs about 15p — that is over 20 times cheaper than a café version! Treats out are lovely but add up very quickly.",
+    emoji: "🍫", amount: 4.50, options: [0.30, 1.50, 4.50, 9], category: "Eating out",
+    context: "A sachet of hot chocolate powder at home costs about 15p — that is about 30 times cheaper than a café version! Treats out are lovely but add up very quickly.",
   },
   {
     id: "football_kit",

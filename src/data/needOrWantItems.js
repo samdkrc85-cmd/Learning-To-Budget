@@ -162,11 +162,11 @@ export const ALL_NOW_ITEMS = [
   },
   {
     id: "school_trip",
-    question: "A school trip",
+    question: "A compulsory school trip",
     emoji: "🎒",
     answer: "need",
     tricky: true,
-    explanation: "School trips are part of your education — but optional ones to theme parks are more of a want!",
+    explanation: "If the school requires it as part of your education, it is a need — but a fun optional trip to a theme park would be more of a want!",
   },
   {
     id: "netflix",
@@ -180,9 +180,9 @@ export const ALL_NOW_ITEMS = [
     id: "birthday_present",
     question: "A birthday present for a friend",
     emoji: "🎁",
-    answer: "need",
+    answer: "want",
     tricky: true,
-    explanation: "You do not need to spend money to celebrate a friend — but being kind and thoughtful is important. A small, affordable gift is fine!",
+    explanation: "You don't need to spend money to celebrate a friend — a card or something homemade is just as meaningful. Gifts are a want, but being thoughtful is always a good idea!",
   },
   {
     id: "pet",

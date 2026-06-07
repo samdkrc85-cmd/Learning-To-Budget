@@ -2,18 +2,18 @@ import React, { useState } from "react";
 
 const MONEY_FACTS = [
   "The average UK child gets about £8.50 pocket money a week — that's £442 a year!",
-  "A Nintendo Switch costs around £260. If you saved £5 a week, you'd have enough in about a year.",
+  "A popular games console costs around £300–£400. If you saved £8 a week, you'd have enough in about a year.",
   "It costs roughly £166,000 to raise a child from birth to age 18 in the UK.",
   "A typical UK primary school costs around £4 million a year to run — paid for by taxes!",
   "The UK's most expensive house ever sold for over £200 million. That's enough to buy 800,000 school dinners!",
   "If you saved just £1 a day from age 10, you'd have over £25,000 by the time you're 80 — thanks to interest!",
-  "The average UK family spends around £63 a week on food — that's over £3,000 a year.",
-  "A return train ticket from London to Edinburgh can cost over £200 if you book last minute — but as little as £30 if you book weeks ahead.",
+  "The average UK family spends around £75 a week on food — that's over £3,900 a year.",
+  "A return train ticket from London to Edinburgh can cost over £300 if you book last minute — but as little as £50 if you book weeks ahead.",
   "Around 1 in 3 UK adults have less than £500 in savings. That's why learning about money early matters so much!",
-  "The UK government spends about £11,000 per pupil on education each year — so your schooling is a big investment!",
+  "The UK government spends about £8,000 per pupil on education each year — so your schooling is a big investment!",
   "If a UK household left the TV on standby all year, it would cost about £16 extra on their electricity bill.",
   "The average UK adult spends around £1,000 a year on takeaways and eating out.",
-  "A first-class stamp now costs 85p. In 1971, it cost just 3p — that's the effect of inflation!",
+  "A first-class stamp now costs £1.35. In 1971, it cost just 3p — that's the effect of inflation!",
   "Around 4.2 million children in the UK live in poverty. Budgeting and saving can help break that cycle.",
   "The most popular UK supermarket is Tesco, which serves about 27 million shoppers every week.",
 ];

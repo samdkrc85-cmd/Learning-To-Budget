@@ -51,7 +51,7 @@ export const SCENARIOS = [
     incomeLabel: "£4,800 a month",
     isHighlighted: false,
     categories: [
-      { id: "mortgage",    name: "Mortgage",             emoji: "🏠", amount: 1100, type: "fixed",    tip: "Monthly repayment on a 3-bed semi-detached worth about £280,000. They borrowed from a bank and pay it back over 25 years." },
+      { id: "mortgage",    name: "Mortgage",             emoji: "🏠", amount: 1200, type: "fixed",    tip: "Monthly repayment on a 3-bed semi-detached worth about £280,000. They put down a £60,000 deposit and borrowed the rest over 25 years." },
       { id: "food",        name: "Food shopping",         emoji: "🛒", amount: 400,  type: "variable", tip: "About £100 a week at the supermarket — breakfast, lunch, dinner, and snacks for three people." },
       { id: "energy",      name: "Gas & electricity",     emoji: "💡", amount: 150,  type: "fixed",    tip: "Heating a 3-bed house and running the oven, washing machine, TV, and everything else." },
       { id: "council_tax", name: "Council tax",           emoji: "🏛️", amount: 180,  type: "fixed",    tip: "Paid to the local council for bin collections, street lighting, and local parks." },
@@ -138,7 +138,7 @@ export const SCENARIOS = [
       { id: "subs",        name: "Subscriptions",           emoji: "🎵", amount: 30,   type: "fixed",    tip: "Streaming services, music, and news apps." },
     ],
     surprises: [
-      { id: "boiler",   name: "The boiler stops working",    emoji: "🔧", amount: 2800, description: "It breaks down completely. The landlord asks them to help pay — always read your tenancy agreement carefully!" },
+      { id: "rent_rise", name: "The landlord puts the rent up", emoji: "📬", amount: 1800, description: "With one month's notice, the landlord raises their rent by £150 a month. That's £1,800 extra over the next year — and they have to find it from somewhere." },
       { id: "car_ins",  name: "Car insurance renewal",       emoji: "🚗", amount: 650,  description: "The annual bill arrives — much higher than last year after a small bump." },
       { id: "phone",    name: "Broken phone screen",         emoji: "📱", amount: 220,  description: "Emma drops her phone on the pavement. The repair is expensive without insurance." },
       { id: "wedding",  name: "A friend's wedding abroad",   emoji: "💒", amount: 400,  description: "James's best friend gets married in Spain. Flights, the hotel, and a wedding gift all add up." },
@@ -154,7 +154,7 @@ export const SCENARIOS = [
     emoji: "👩‍👦",
     title: "Sarah & Noah",
     subtitle:
-      "Sarah works part-time as a teaching assistant and looks after her 7-year-old son, Noah, on her own.",
+      "Sarah works part-time as a teaching assistant and looks after her 7-year-old son, Noah, on her own. Her income includes Child Benefit and Universal Credit.",
     income: 1800,
     incomeLabel: "£1,800 a month",
     isHighlighted: false,
@@ -163,7 +163,7 @@ export const SCENARIOS = [
       { id: "food",        name: "Food shopping",              emoji: "🛒", amount: 200, type: "variable", tip: "Feeding two people on a tight budget — own-brand items and meal planning really help." },
       { id: "energy",      name: "Gas & electricity",          emoji: "💡", amount: 90,  type: "fixed",    tip: "Energy bills have gone up a lot recently. Keeping the heating low and turning off lights saves money." },
       { id: "council_tax", name: "Council tax",                emoji: "🏛️", amount: 100, type: "fixed",    tip: "Single adults get a 25% discount on council tax — Sarah saves about £35 a month because of this." },
-      { id: "childcare",   name: "After-school club",          emoji: "👧", amount: 120, type: "fixed",    tip: "Noah goes to after-school club until Sarah finishes work. Childcare is one of the biggest costs for single parents." },
+      { id: "childcare",   name: "After-school club",          emoji: "👧", amount: 120, type: "fixed",    tip: "Noah goes to after-school club three days a week until Sarah finishes work. Full-time childcare would cost much more." },
       { id: "transport",   name: "Bus & travel",               emoji: "🚌", amount: 60,  type: "variable", tip: "Sarah doesn't have a car, so she relies on buses and the occasional taxi." },
       { id: "uniform",     name: "School uniform & clothes",   emoji: "👕", amount: 30,  type: "variable", tip: "Noah grows fast — new shoes and uniform are needed almost every term." },
       { id: "clubs",       name: "Noah's activities",          emoji: "⚽", amount: 25,  type: "variable", tip: "Noah does football on Saturday mornings. Sarah looked for a club with low fees." },
