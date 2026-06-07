@@ -1,10 +1,17 @@
 import React from "react";
 
 // ─── PROGRESS BAR ─────────────────────────────────────────────────────────────
-export function ProgressBar({ value, max, color = "var(--accent)" }) {
+export function ProgressBar({ value, max, color = "var(--accent)", label = "Progress" }) {
   const pct = Math.min(100, (value / max) * 100);
   return (
-    <div style={{ background: "#e4e7ec", borderRadius: 99, height: 6, overflow: "hidden" }}>
+    <div
+      role="progressbar"
+      aria-valuenow={value}
+      aria-valuemin={0}
+      aria-valuemax={max}
+      aria-label={label}
+      style={{ background: "#e4e7ec", borderRadius: 99, height: 6, overflow: "hidden" }}
+    >
       <div
         style={{
           width: pct + "%",
@@ -50,7 +57,7 @@ export function BackBtn({ onClick, label = "← Back" }) {
         display: "flex",
         alignItems: "center",
         gap: 4,
-        padding: "8px 0",
+        padding: "13px 0",
       }}
     >
       {label}

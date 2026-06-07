@@ -210,7 +210,7 @@ export default function BudgetBuilder({ onBack }) {
                   flexShrink: 0,
                 }}
               >
-                {r.diff === 0 ? "✓ spot on" : r.diff > 0 ? `+£${r.diff}` : `−£${Math.abs(r.diff)}`}
+                {r.diff === 0 ? "✓ spot on" : r.diff > 0 ? `▲ +£${r.diff}` : `▼ −£${Math.abs(r.diff)}`}
               </span>
             </div>
           ))}
@@ -282,7 +282,7 @@ export default function BudgetBuilder({ onBack }) {
             color: "var(--red)",
             border: "none",
             borderRadius: "var(--radius-sm)",
-            padding: "6px 14px",
+            padding: "10px 14px",
             fontWeight: 700,
             fontSize: 13,
           }}

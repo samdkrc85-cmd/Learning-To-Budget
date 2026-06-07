@@ -70,7 +70,11 @@ button {
   font-family: 'DM Sans', sans-serif;
   cursor: pointer;
   border: none;
-  outline: none;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
 }
 
 input {
@@ -150,7 +154,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .option-btn.faded {
   background: var(--bg);
-  color: var(--subtle);
+  color: var(--muted);
 }
 
 .mono {

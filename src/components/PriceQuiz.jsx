@@ -49,6 +49,10 @@ function ResultsScreen({ score, total, pct, rank, onRestart, onBack }) {
 
   useEffect(() => {
     if (score === 0) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setDisplayed(score);
+      return;
+    }
     const duration = 1000;
     const steps = 30;
     const increment = score / steps;
@@ -171,7 +175,7 @@ export default function PriceQuiz({ onBack }) {
             color: "var(--red)",
             border: "none",
             borderRadius: "var(--radius-sm)",
-            padding: "6px 14px",
+            padding: "10px 14px",
             fontWeight: 700,
             fontSize: 13,
           }}
@@ -184,7 +188,7 @@ export default function PriceQuiz({ onBack }) {
       </div>
 
       <ProgressBar value={idx} max={questions.length} color="var(--purple)" />
-      <div style={{ textAlign: "right", fontSize: 12, color: "var(--subtle)", fontWeight: 600, marginTop: 5, marginBottom: 20 }}>
+      <div style={{ textAlign: "right", fontSize: 13, color: "var(--muted)", fontWeight: 600, marginTop: 5, marginBottom: 20 }}>
         Question {idx + 1} of {questions.length}
       </div>
 

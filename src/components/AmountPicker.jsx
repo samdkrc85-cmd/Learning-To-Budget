@@ -14,6 +14,7 @@ const AmountPicker = memo(function AmountPicker({ value, onChange }) {
 
   const btnBase = {
     height: 44,
+    minWidth: 44,
     padding: "0 12px",
     borderRadius: "var(--radius-sm)",
     fontWeight: 700,

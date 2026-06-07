@@ -31,6 +31,10 @@ function ResultsScreen({ score, total, onRestart, onBack }) {
 
   useEffect(() => {
     if (score === 0) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setDisplayed(score);
+      return;
+    }
     const steps = 30;
     const increment = score / steps;
     let current = 0;
@@ -174,7 +178,7 @@ export default function NeedOrWant({ onBack }) {
             color: "var(--red)",
             border: "none",
             borderRadius: "var(--radius-sm)",
-            padding: "6px 14px",
+            padding: "10px 14px",
             fontWeight: 700,
             fontSize: 13,
           }}
@@ -187,7 +191,7 @@ export default function NeedOrWant({ onBack }) {
       </div>
 
       <ProgressBar value={idx} max={items.length} color="#9333ea" />
-      <div style={{ textAlign: "right", fontSize: 12, color: "var(--subtle)", fontWeight: 600, marginTop: 5, marginBottom: 20 }}>
+      <div style={{ textAlign: "right", fontSize: 13, color: "var(--muted)", fontWeight: 600, marginTop: 5, marginBottom: 20 }}>
         Card {idx + 1} of {items.length}
       </div>
 
@@ -220,9 +224,11 @@ export default function NeedOrWant({ onBack }) {
         {!answered && (
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 4 }}>
             <div
+              aria-live="polite"
+              aria-label={`${timeLeft} seconds remaining`}
               style={{
-                width: 36,
-                height: 36,
+                width: 44,
+                height: 44,
                 borderRadius: "50%",
                 border: `3px solid ${timerColor}`,
                 display: "flex",
@@ -236,7 +242,7 @@ export default function NeedOrWant({ onBack }) {
             >
               {timeLeft}
             </div>
-            <span style={{ fontSize: 12, color: "var(--muted)", fontWeight: 600 }}>seconds left</span>
+            <span style={{ fontSize: 13, color: "var(--muted)", fontWeight: 600 }}>seconds left</span>
           </div>
         )}
 
@@ -263,7 +269,7 @@ export default function NeedOrWant({ onBack }) {
                 background: isCorrect ? "var(--green)" : timedOut ? "var(--amber)" : "var(--red)",
                 color: "white",
                 borderRadius: "var(--radius-sm)",
-                padding: "10px 0",
+                padding: "14px 0",
                 fontWeight: 700,
                 fontSize: 14,
               }}

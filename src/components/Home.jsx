@@ -58,10 +58,10 @@ export default function Home({ onNav }) {
             textAlign: "left",
           }}
         >
-          <div style={{ fontSize: 11, fontWeight: 700, color: "#92400e", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 5 }}>
+          <div style={{ fontSize: 13, fontWeight: 700, color: "#78350f", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 5 }}>
             💡 Did you know?
           </div>
-          <p style={{ fontSize: 13, color: "#78350f", fontWeight: 500, lineHeight: 1.55, margin: 0 }}>
+          <p style={{ fontSize: 14, color: "#78350f", fontWeight: 500, lineHeight: 1.55, margin: 0 }}>
             {fact}
           </p>
         </div>
@@ -124,6 +124,7 @@ function PiggyLogo() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{ margin: "0 auto 12px", display: "block" }}
+      aria-hidden="true"
     >
       {/* ── Ears (behind head) ── */}
       <ellipse cx="28" cy="36" rx="18" ry="22" fill="#fda4af" stroke="#fb7185" strokeWidth="2.5" />
@@ -223,7 +224,7 @@ function HomeCard({ onPress, gradient, shadow, shadowHover, icon, title, subtitl
           </div>
           <div>
             <div style={{ fontWeight: 800, fontSize: 17, color: "white" }}>{title}</div>
-            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.75)", fontWeight: 500, marginTop: 2 }}>
+            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.95)", fontWeight: 500, marginTop: 2 }}>
               {subtitle}
             </div>
           </div>
