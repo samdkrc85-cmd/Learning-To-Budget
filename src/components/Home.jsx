@@ -105,7 +105,7 @@ export default function Home({ onNav }) {
           icon="📊"
           title="Budget Builder"
           subtitle="Try to balance the monthly budget of different households"
-          tags={["🧒 Cost of YOU", "👨‍👩‍👦 Family", "🎓 Student", "👩‍👦 Single parent"]}
+          tags={["🧒 Cost of YOU", "👨‍👩‍👦 Family", "💑 Couple", "👩‍👦 Single parent"]}
           tagBg="#ccfbf1"
           tagColor="#0f766e"
         />
