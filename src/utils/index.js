@@ -45,20 +45,31 @@ export function fmtExact(n) {
  * Rounds to the nearest £50 to keep options clean.
  */
 export function makeSurpriseOptions(amount) {
-  const mults = shuffle([0.3, 0.55, 1.6, 2.4]);
+  // Step and floor scale with the answer so small amounts get tight distractors
+  // and large amounts get round-number ones.
+  const step = amount < 50 ? 5 : amount < 100 ? 10 : 50;
+  const floor = step;
+
+  function snap(v) {
+    return Math.max(floor, Math.round(v / step) * step);
+  }
+
+  // Multipliers are spread wide enough that snap() produces distinct values
+  // even for small answers (e.g. £20 → £10, £30, £40, £50).
+  const mults = shuffle([0.4, 0.7, 1.5, 2.5]);
   const opts = new Set([amount]);
 
   for (const m of mults) {
     if (opts.size >= 4) break;
-    const v = Math.max(50, Math.round((amount * m) / 50) * 50);
+    const v = snap(amount * m);
     if (v !== amount) opts.add(v);
   }
 
-  let attempts = 0;
-  while (opts.size < 4 && attempts < 20) {
-    const v = Math.max(50, Math.round((amount * (0.4 + Math.random() * 2)) / 50) * 50);
-    opts.add(v);
-    attempts++;
+  // Fallback: nudge by fixed offsets relative to the step to guarantee variety.
+  const nudges = shuffle([-3, -2, -1, 2, 3, 4].map((n) => snap(amount + n * step)));
+  for (const v of nudges) {
+    if (opts.size >= 4) break;
+    if (v !== amount && v > 0) opts.add(v);
   }
 
   return shuffle([...opts].slice(0, 4));

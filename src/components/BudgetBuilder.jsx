@@ -275,13 +275,20 @@ export default function BudgetBuilder({ onBack }) {
   return (
     <div className="page">
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
-        <BackBtn
-          onClick={() =>
-            page === 0
-              ? dispatch({ type: "RESET" })
-              : dispatch({ type: "PREV_PAGE" })
-          }
-        />
+        <button
+          onClick={() => dispatch({ type: "RESET" })}
+          style={{
+            background: "#fee2e2",
+            color: "var(--red)",
+            border: "none",
+            borderRadius: "var(--radius-sm)",
+            padding: "6px 14px",
+            fontWeight: 700,
+            fontSize: 13,
+          }}
+        >
+          ✕ Quit
+        </button>
         <Pill color="var(--accent-bg)" textColor="var(--accent)">
           Page {page + 1} of {pages.length}
         </Pill>

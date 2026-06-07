@@ -164,7 +164,20 @@ export default function PriceQuiz({ onBack }) {
   return (
     <div className="page">
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
-        <BackBtn onClick={onBack} />
+        <button
+          onClick={onBack}
+          style={{
+            background: "#fee2e2",
+            color: "var(--red)",
+            border: "none",
+            borderRadius: "var(--radius-sm)",
+            padding: "6px 14px",
+            fontWeight: 700,
+            fontSize: 13,
+          }}
+        >
+          ✕ Quit
+        </button>
         <Pill color="var(--purple-bg)" textColor="var(--purple)">
           {liveMascot} {score} correct
         </Pill>
