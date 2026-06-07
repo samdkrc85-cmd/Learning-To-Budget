@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const MONEY_FACTS = [
   "The average UK child gets about £8.50 pocket money a week — that's £442 a year!",
@@ -24,6 +24,31 @@ function getRandomFact() {
 
 export default function Home({ onNav }) {
   const [fact] = useState(getRandomFact);
+  const [installPrompt, setInstallPrompt] = useState(null);
+  const [installed, setInstalled] = useState(false);
+
+  useEffect(() => {
+    function onBeforeInstall(e) {
+      e.preventDefault();
+      setInstallPrompt(e);
+    }
+    function onAppInstalled() {
+      setInstalled(true);
+      setInstallPrompt(null);
+    }
+    window.addEventListener("beforeinstallprompt", onBeforeInstall);
+    window.addEventListener("appinstalled", onAppInstalled);
+    return () => {
+      window.removeEventListener("beforeinstallprompt", onBeforeInstall);
+      window.removeEventListener("appinstalled", onAppInstalled);
+    };
+  }, []);
+
+  function handleInstall() {
+    if (!installPrompt) return;
+    installPrompt.prompt();
+    installPrompt.userChoice.then(() => setInstallPrompt(null));
+  }
   return (
     <div
       style={{
@@ -66,6 +91,35 @@ export default function Home({ onNav }) {
           </p>
         </div>
       </div>
+
+      {/* Install banner */}
+      {installPrompt && !installed && (
+        <div style={{ padding: "0 20px 4px" }}>
+          <button
+            onClick={handleInstall}
+            style={{
+              width: "100%",
+              background: "#0f766e",
+              color: "white",
+              border: "none",
+              borderRadius: "var(--radius-md)",
+              padding: "14px 18px",
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              textAlign: "left",
+              cursor: "pointer",
+            }}
+          >
+            <span style={{ fontSize: 22 }}>📲</span>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontWeight: 700, fontSize: 14 }}>Add to Home Screen</div>
+              <div style={{ fontSize: 12, opacity: 0.85, marginTop: 1 }}>Install the app for quick access — works offline too</div>
+            </div>
+            <span style={{ opacity: 0.7, fontSize: 18 }}>›</span>
+          </button>
+        </div>
+      )}
 
       {/* Activity cards */}
       <div style={{ padding: "0 20px 40px", display: "flex", flexDirection: "column", gap: 16 }}>
