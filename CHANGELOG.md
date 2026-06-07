@@ -4,17 +4,51 @@ All notable changes to Learning To Budget are recorded here.
 
 ---
 
-## Current — Budget Builder Redesign
-**Tag:** *(unreleased — latest on master)*
+## 2026-06-07 — Major update
+**Tag:** *(latest on master)*
 
-- Rebuilt Budget Builder as a one-card-at-a-time experience
-- Replaced +/− buttons with a slider for each category guess
-- Slider max is randomised per question so the position doesn't give away the answer
-- Reveal screen shows a side-by-side bar comparison of guess vs real amount
-- Scoring changed from points to stars: ⭐⭐⭐ Spot on / ⭐⭐ Close / ⭐ Keep practising (based on % difference from real amount)
-- Results screen shows star breakdown per category and overall rank mascot
+### Budget Builder
+- Rebuilt as a paginated one-card-at-a-time experience with +/− amount pickers
 - Removed Aiden at University scenario (too similar to Chloe the Student)
-- Renamed Priya & Son to Sarah & Noah
+- Renamed Priya & Son to Sarah & Noah throughout
+- Fixed `makeSurpriseOptions` generating duplicate distractors for small amounts
+- Added ✕ Quit button (consistent with other activities); removed redundant Back button
+- Added "How to play" intro screen explaining scoring and the Surprise Round
+- Added ▲/▼ shape indicators to results diff column for colour-blind users
+
+### Need or Want?
+- Added Need or Want? activity — 10 cards, 5-second timer, 30-item pool
+- All answers now require a manual "Next →" tap so explanations can be read
+- Added ✕ Quit button so the activity can be exited mid-game
+
+### Price Quiz
+- Added ✕ Quit button for consistency with other activities
+
+### Home screen
+- Replaced emoji logo with a custom front-facing piggy bank SVG
+- Added rotating money fact banner (15 UK-specific facts)
+
+### 6 UI improvements (landed with v1)
+- Live rank mascot updates in real time during Price Quiz and Need or Want?
+- Animated score counter on all results screens
+- Colour-coded category rows in Budget Builder results
+- "Did you know?" context facts shown after each Price Quiz answer
+- Rank mascot and praise message on Need or Want? results screen
+- Consistent card/pill design system across all activities
+
+### Accessibility
+- Added `:focus-visible` keyboard focus ring (previously `outline: none` removed all focus)
+- Fixed low-contrast `--subtle` text (2.2:1 → 4.1:1) across all screens
+- Increased Quit/Back/Next button touch targets to 44 px minimum
+- Added `aria-hidden` to decorative SVG, ARIA roles to ProgressBar, live region to countdown timer
+- Respected `prefers-reduced-motion` on animated score counters
+
+### Content
+- Updated 11 quiz prices to 2024–2025 UK figures (bread, eggs, Netflix, Spotify, and others)
+- Corrected 5 Home screen money facts (stamp price, education spend, food spend, train fare, games console)
+- Fixed birthday present Need or Want? answer from "need" to "want"
+- Clarified school trip question wording; updated Sarah & Noah subtitle to mention benefits
+- Replaced legally inaccurate boiler-repair surprise in James & Emma with a rent increase
 
 ---
 
