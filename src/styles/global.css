@@ -1,0 +1,159 @@
+/* ─── GLOBAL STYLES & DESIGN TOKENS ────────────────────────────────────────────
+   Import this file once in main.jsx or index.js.
+   All colour, spacing, and radius values are defined here as CSS variables
+   so that changing e.g. --radius only needs one edit.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@500&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Colour tokens ── */
+:root {
+  --bg:         #f0f2f5;
+  --card:       #ffffff;
+  --border:     #e4e7ec;
+
+  --text:       #111827;
+  --muted:      #6b7280;
+  --subtle:     #9ca3af;
+
+  --green:      #16a34a;
+  --green-bg:   #dcfce7;
+
+  --red:        #dc2626;
+  --red-bg:     #fee2e2;
+
+  --amber:      #b45309;
+  --amber-bg:   #fef3c7;
+
+  --blue:       #2563eb;
+  --blue-bg:    #dbeafe;
+
+  --purple:     #6d28d9;
+  --purple-bg:  #ede9fe;
+
+  --accent:     #0f766e;
+  --accent-bg:  #ccfbf1;
+
+  /* ── Spacing & radius tokens ── */
+  --radius-sm:  10px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --radius-xl:  24px;
+
+  --gap-sm:     8px;
+  --gap-md:     12px;
+  --gap-lg:     16px;
+  --gap-xl:     20px;
+
+  --page-max:   460px;
+  --page-pad:   20px;
+}
+
+/* ── Element resets ── */
+button {
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input {
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  border: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* ── Shared layout class ── */
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 24px var(--page-pad);
+  max-width: var(--page-max);
+  margin: 0 auto;
+}
+
+/* ── Shared component classes ──
+   These replace the most repeated inline style objects.
+   Components can still use inline styles for one-off overrides.
+── */
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border);
+}
+
+.btn-primary {
+  width: 100%;
+  background: var(--accent);
+  color: white;
+  border-radius: var(--radius-md);
+  padding: 15px 0;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.btn-secondary {
+  background: var(--bg);
+  color: var(--text);
+  border-radius: var(--radius-md);
+  padding: 14px 0;
+  font-weight: 700;
+  font-size: 15px;
+  border: 1.5px solid var(--border);
+}
+
+.option-btn {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px 8px;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  transition: all 0.12s;
+}
+
+.option-btn.correct {
+  background: var(--green-bg);
+  border: 2px solid var(--green);
+  color: var(--green);
+}
+
+.option-btn.wrong {
+  background: var(--red-bg);
+  border: 2px solid var(--red);
+  color: var(--red);
+}
+
+.option-btn.faded {
+  background: var(--bg);
+  color: var(--subtle);
+}
+
+.mono {
+  font-family: 'DM Mono', monospace;
+  font-weight: 700;
+}
