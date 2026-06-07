@@ -60,8 +60,37 @@ export default function Home({ onNav }) {
         flexDirection: "column",
       }}
     >
+      {/* Install banner */}
+      {installPrompt && !installed && (
+        <div style={{ padding: "12px 20px 0" }}>
+          <button
+            onClick={handleInstall}
+            style={{
+              width: "100%",
+              background: "#0f766e",
+              color: "white",
+              border: "none",
+              borderRadius: "var(--radius-md)",
+              padding: "14px 18px",
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              textAlign: "left",
+              cursor: "pointer",
+            }}
+          >
+            <span style={{ fontSize: 22 }}>📲</span>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontWeight: 700, fontSize: 14 }}>Add to Home Screen</div>
+              <div style={{ fontSize: 12, opacity: 0.85, marginTop: 1 }}>Install the app for quick access — works offline too</div>
+            </div>
+            <span style={{ opacity: 0.7, fontSize: 18 }}>›</span>
+          </button>
+        </div>
+      )}
+
       {/* Header */}
-      <div style={{ padding: "48px 24px 32px", textAlign: "center" }}>
+      <div style={{ padding: `${installPrompt && !installed ? "24px" : "48px"} 24px 32px`, textAlign: "center" }}>
         <PiggyLogo />
         <h1 style={{ fontSize: 26, fontWeight: 800, color: "#111827", marginBottom: 8, lineHeight: 1.2 }}>
           Learn to Budget
@@ -91,35 +120,6 @@ export default function Home({ onNav }) {
           </p>
         </div>
       </div>
-
-      {/* Install banner */}
-      {installPrompt && !installed && (
-        <div style={{ padding: "0 20px 4px" }}>
-          <button
-            onClick={handleInstall}
-            style={{
-              width: "100%",
-              background: "#0f766e",
-              color: "white",
-              border: "none",
-              borderRadius: "var(--radius-md)",
-              padding: "14px 18px",
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              textAlign: "left",
-              cursor: "pointer",
-            }}
-          >
-            <span style={{ fontSize: 22 }}>📲</span>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontWeight: 700, fontSize: 14 }}>Add to Home Screen</div>
-              <div style={{ fontSize: 12, opacity: 0.85, marginTop: 1 }}>Install the app for quick access — works offline too</div>
-            </div>
-            <span style={{ opacity: 0.7, fontSize: 18 }}>›</span>
-          </button>
-        </div>
-      )}
 
       {/* Activity cards */}
       <div style={{ padding: "0 20px 40px", display: "flex", flexDirection: "column", gap: 16 }}>

@@ -11,7 +11,7 @@ export default defineConfig({
       includeAssets: ["icon.svg"],
       manifest: {
         name: "Learn to Budget",
-        short_name: "Budget",
+        short_name: "Learning To Budget",
         description: "A financial literacy app for children aged 8–13",
         start_url: "/",
         display: "standalone",
