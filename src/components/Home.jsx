@@ -90,7 +90,7 @@ export default function Home({ onNav }) {
       )}
 
       {/* Header */}
-      <div style={{ padding: `${installPrompt && !installed ? "24px" : "48px"} 24px 32px`, textAlign: "center" }}>
+      <div style={{ padding: (installPrompt && !installed ? "24px" : "48px") + " 24px 32px", textAlign: "center" }}>
         <PiggyLogo />
         <h1 style={{ fontSize: 26, fontWeight: 800, color: "#111827", marginBottom: 8, lineHeight: 1.2 }}>
           Learn to Budget
