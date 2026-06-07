@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" fill="#0f766e"/>
+
+  <!-- Ears -->
+  <ellipse cx="148" cy="198" rx="62" ry="76" fill="#fda4af" stroke="#fb7185" strokeWidth="8"/>
+  <ellipse cx="364" cy="198" rx="62" ry="76" fill="#fda4af" stroke="#fb7185" strokeWidth="8"/>
+  <ellipse cx="148" cy="201" rx="36" ry="50" fill="#f472b6"/>
+  <ellipse cx="364" cy="201" rx="36" ry="50" fill="#f472b6"/>
+
+  <!-- Legs -->
+  <ellipse cx="190" cy="428" rx="42" ry="46" fill="#fda4af" stroke="#fb7185" strokeWidth="7"/>
+  <ellipse cx="322" cy="428" rx="42" ry="46" fill="#fda4af" stroke="#fb7185" strokeWidth="7"/>
+  <ellipse cx="190" cy="462" rx="42" ry="22" fill="#f472b6" stroke="#fb7185" strokeWidth="5"/>
+  <ellipse cx="322" cy="462" rx="42" ry="22" fill="#f472b6" stroke="#fb7185" strokeWidth="5"/>
+
+  <!-- Body -->
+  <circle cx="256" cy="280" r="190" fill="#fda4af" stroke="#fb7185" strokeWidth="9"/>
+
+  <!-- Coin slot -->
+  <rect x="192" y="102" width="128" height="26" rx="13" fill="#9f1239"/>
+
+  <!-- Coin -->
+  <circle cx="256" cy="76" r="44" fill="#fbbf24" stroke="#f59e0b" strokeWidth="6"/>
+  <text x="256" y="93" text-anchor="middle" font-size="40" font-weight="bold" fill="#92400e" font-family="sans-serif">£</text>
+
+  <!-- Eyes -->
+  <circle cx="196" cy="254" r="22" fill="#1e293b"/>
+  <circle cx="316" cy="254" r="22" fill="#1e293b"/>
+  <circle cx="205" cy="245" r="7" fill="white"/>
+  <circle cx="325" cy="245" r="7" fill="white"/>
+
+  <!-- Snout -->
+  <ellipse cx="256" cy="324" rx="78" ry="60" fill="#f472b6" stroke="#fb7185" strokeWidth="7"/>
+  <ellipse cx="230" cy="331" rx="18" ry="15" fill="#be185d"/>
+  <ellipse cx="282" cy="331" rx="18" ry="15" fill="#be185d"/>
+
+  <!-- Smile -->
+  <path d="M210 370 Q256 400 302 370" stroke="#be185d" stroke-width="9" stroke-linecap="round" fill="none"/>
+
+  <!-- Cheeks -->
+  <ellipse cx="158" cy="306" rx="34" ry="24" fill="#fb7185" opacity="0.3"/>
+  <ellipse cx="354" cy="306" rx="34" ry="24" fill="#fb7185" opacity="0.3"/>
+</svg>
