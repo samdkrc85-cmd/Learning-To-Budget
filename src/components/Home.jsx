@@ -37,21 +37,7 @@ export default function Home({ onNav }) {
     >
       {/* Header */}
       <div style={{ padding: "48px 24px 32px", textAlign: "center" }}>
-        <div
-          style={{
-            width: 72,
-            height: 72,
-            borderRadius: 22,
-            background: "linear-gradient(135deg, #1e1b4b, #0f766e)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 36,
-            margin: "0 auto 20px",
-          }}
-        >
-          💷
-        </div>
+        <PiggyLogo />
         <h1 style={{ fontSize: 26, fontWeight: 800, color: "#111827", marginBottom: 8, lineHeight: 1.2 }}>
           Learn to Budget
         </h1>
@@ -125,6 +111,60 @@ export default function Home({ onNav }) {
 
       </div>
     </div>
+  );
+}
+
+// ─── PIGGY LOGO ───────────────────────────────────────────────────────────────
+function PiggyLogo() {
+  return (
+    <svg
+      width="130"
+      height="150"
+      viewBox="0 0 130 150"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ margin: "0 auto 12px", display: "block" }}
+    >
+      {/* ── Ears (behind head) ── */}
+      <ellipse cx="28" cy="36" rx="18" ry="22" fill="#fda4af" stroke="#fb7185" strokeWidth="2.5" />
+      <ellipse cx="102" cy="36" rx="18" ry="22" fill="#fda4af" stroke="#fb7185" strokeWidth="2.5" />
+      <ellipse cx="28" cy="37" rx="10" ry="14" fill="#f472b6" />
+      <ellipse cx="102" cy="37" rx="10" ry="14" fill="#f472b6" />
+
+      {/* ── Legs + trotters (behind body) ── */}
+      <ellipse cx="46" cy="120" rx="13" ry="14" fill="#fda4af" stroke="#fb7185" strokeWidth="2" />
+      <ellipse cx="84" cy="120" rx="13" ry="14" fill="#fda4af" stroke="#fb7185" strokeWidth="2" />
+      <ellipse cx="46" cy="131" rx="13" ry="7" fill="#f472b6" stroke="#fb7185" strokeWidth="1.5" />
+      <ellipse cx="84" cy="131" rx="13" ry="7" fill="#f472b6" stroke="#fb7185" strokeWidth="1.5" />
+
+      {/* ── Body / head ── */}
+      <circle cx="65" cy="72" r="52" fill="#fda4af" stroke="#fb7185" strokeWidth="2.5" />
+
+      {/* ── Coin slot ── */}
+      <rect x="47" y="21" width="36" height="7" rx="3.5" fill="#9f1239" />
+
+      {/* ── Coin ── */}
+      <circle cx="65" cy="14" r="12" fill="#fbbf24" stroke="#f59e0b" strokeWidth="1.5" />
+      <text x="65" y="19" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#92400e" fontFamily="sans-serif">£</text>
+
+      {/* ── Eyes ── */}
+      <circle cx="47" cy="64" r="6" fill="#1e293b" />
+      <circle cx="83" cy="64" r="6" fill="#1e293b" />
+      <circle cx="49.5" cy="61.5" r="2" fill="white" />
+      <circle cx="85.5" cy="61.5" r="2" fill="white" />
+
+      {/* ── Snout ── */}
+      <ellipse cx="65" cy="86" rx="22" ry="17" fill="#f472b6" stroke="#fb7185" strokeWidth="2" />
+      <ellipse cx="57" cy="88" rx="5" ry="4" fill="#be185d" />
+      <ellipse cx="73" cy="88" rx="5" ry="4" fill="#be185d" />
+
+      {/* ── Smile ── */}
+      <path d="M53 100 Q65 110 77 100" stroke="#be185d" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+
+      {/* ── Rosy cheeks ── */}
+      <ellipse cx="36" cy="82" rx="10" ry="7" fill="#fb7185" opacity="0.3" />
+      <ellipse cx="94" cy="82" rx="10" ry="7" fill="#fb7185" opacity="0.3" />
+    </svg>
   );
 }
 
