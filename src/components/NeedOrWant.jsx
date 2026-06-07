@@ -124,20 +124,24 @@ export default function NeedOrWant({ onBack }) {
     return () => clearInterval(timerRef.current);
   }, [idx, done]);
 
-  // Auto-advance after answer is revealed
+  // Auto-advance only on correct or timeout — wrong answers wait for a tap
   useEffect(() => {
     if (picked === null) return;
     clearInterval(timerRef.current);
-    const t = setTimeout(() => {
-      if (idx + 1 >= items.length) {
-        setDone(true);
-      } else {
-        setIdx((i) => i + 1);
-        setPicked(null);
-      }
-    }, 1800);
+    const wasWrong = picked !== "timeout" && picked !== items[idx]?.answer;
+    if (wasWrong) return;
+    const t = setTimeout(advance, 1800);
     return () => clearTimeout(t);
   }, [picked]);
+
+  function advance() {
+    if (idx + 1 >= items.length) {
+      setDone(true);
+    } else {
+      setIdx((i) => i + 1);
+      setPicked(null);
+    }
+  }
 
   function handlePick(choice) {
     if (picked !== null) return;
@@ -240,9 +244,25 @@ export default function NeedOrWant({ onBack }) {
             <div style={{ fontWeight: 700, fontSize: 14, color: timedOut ? "var(--amber)" : isCorrect ? "var(--green)" : "var(--red)", marginBottom: 6 }}>
               {timedOut ? "⏰ Too slow!" : isCorrect ? "✅ Correct!" : `❌ It's a ${item.answer}!`}
             </div>
-            <p style={{ fontSize: 13, color: "var(--text)", lineHeight: 1.55, fontWeight: 500 }}>
+            <p style={{ fontSize: 13, color: "var(--text)", lineHeight: 1.55, fontWeight: 500, marginBottom: !isCorrect ? 12 : 0 }}>
               {item.explanation}
             </p>
+            {!isCorrect && (
+              <button
+                onClick={advance}
+                style={{
+                  width: "100%",
+                  background: "var(--red)",
+                  color: "white",
+                  borderRadius: "var(--radius-sm)",
+                  padding: "10px 0",
+                  fontWeight: 700,
+                  fontSize: 14,
+                }}
+              >
+                {idx + 1 >= items.length ? "See results →" : "Next →"}
+              </button>
+            )}
           </div>
         )}
       </div>
