@@ -10,7 +10,7 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["icon.svg"],
       manifest: {
-        name: "Learn to Budget",
+        name: "Learning To Budget",
         short_name: "Learning To Budget",
         description: "A financial literacy app for children aged 8–13",
         start_url: "/",

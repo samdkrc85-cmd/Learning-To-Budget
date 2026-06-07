@@ -93,7 +93,7 @@ export default function Home({ onNav }) {
       <div style={{ padding: (installPrompt && !installed ? "24px" : "48px") + " 24px 32px", textAlign: "center" }}>
         <PiggyLogo />
         <h1 style={{ fontSize: 26, fontWeight: 800, color: "#111827", marginBottom: 8, lineHeight: 1.2 }}>
-          Learn to Budget
+          Learning To Budget
         </h1>
         <p style={{ color: "#6b7280", fontSize: 14, fontWeight: 500, lineHeight: 1.6, maxWidth: 300, margin: "0 auto" }}>
           Most adults wish they'd learned about money sooner. Pick an activity to get started.
